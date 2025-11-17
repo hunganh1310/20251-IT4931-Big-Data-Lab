@@ -83,6 +83,15 @@ Repository được tổ chức thành các labs độc lập, mỗi lab tập t
 - **Tech Stack**: Kafka + Spark + Iceberg + dbt + Great Expectations + Airflow
 - **📁 Thư mục**: `Data_Lakehouse_lab/`
 
+### 🟢 Infrastructure Lab
+
+#### 9. **K8s Basics Lab** - Container Orchestration
+- **Mục tiêu**: Học Kubernetes fundamentals cho container orchestration
+- **Nội dung**: Pods, Deployments, Services, ConfigMaps, Secrets, Storage, Scaling
+- **Số notebooks**: 7 labs
+- **Tech Stack**: Kubernetes, kubectl, minikube/kind
+- **📁 Thư mục**: `K8s_Basics_lab/`
+
 ## 🗺️ Learning Paths
 
 ### Path 1: Real-time Data Processing (Streaming Focus)
@@ -247,6 +256,12 @@ jupyter notebook
 - **Key Concepts**: Schema evolution, Partitioning, Time travel
 - **Use Case**: Data lakehouse storage
 
+### K8s Basics Lab
+- **Duration**: ~10-15 hours
+- **Difficulty**: Advanced
+- **Key Concepts**: Pods, Deployments, Services, ConfigMaps, Secrets, Storage, HPA
+- **Use Case**: Container orchestration và production deployment
+
 ### NoSQL Lab
 - **Duration**: ~12-15 hours
 - **Difficulty**: Intermediate
@@ -299,9 +314,15 @@ materials/
 │   ├── notebooks/             # 6 Jupyter notebooks
 │   └── README.md
 │
-└── Data_Lakehouse_lab/        # Integration lab
+├── Data_Lakehouse_lab/        # Integration lab
+│   ├── notebooks/             # 7 Jupyter notebooks
+│   ├── dags/                  # Complete pipeline DAGs
+│   └── README.md
+│
+└── K8s_Basics_lab/            # Kubernetes basics lab
     ├── notebooks/             # 7 Jupyter notebooks
-    ├── dags/                  # Complete pipeline DAGs
+    ├── manifests/             # K8s manifest examples
+    ├── apps/                  # Sample applications
     └── README.md
 ```
 
@@ -326,6 +347,7 @@ materials/
 
 ### Infrastructure
 - **Docker & Docker Compose**: Containerization
+- **Kubernetes**: Container orchestration
 - **Jupyter Notebooks**: Interactive learning
 - **Python 3.10+**: Programming language
 
