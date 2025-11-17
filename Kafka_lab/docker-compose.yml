@@ -1,7 +1,7 @@
 services:
   # Kafka Broker with KRaft mode (no Zookeeper needed)
   kafka:
-    image: confluentinc/cp-kafka:7.4.0
+    image: confluentinc/cp-kafka:7.5.0
     container_name: kafka_broker
     ports:
       - "9092:9092"
@@ -43,7 +43,7 @@ services:
 
   # Schema Registry for Avro schemas
   schema-registry:
-    image: confluentinc/cp-schema-registry:7.4.0
+    image: confluentinc/cp-schema-registry:7.5.0
     container_name: kafka_schema_registry
     depends_on:
       kafka:
@@ -60,7 +60,7 @@ services:
 
   # Kafka Connect for data integration
   kafka-connect:
-    image: confluentinc/cp-kafka-connect:7.4.0
+    image: confluentinc/cp-kafka-connect:7.5.0
     container_name: kafka_connect
     depends_on:
       - kafka

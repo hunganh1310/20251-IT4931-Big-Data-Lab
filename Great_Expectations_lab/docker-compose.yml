@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ge_password
       POSTGRES_DB: ge_db
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql

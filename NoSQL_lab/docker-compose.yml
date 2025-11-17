@@ -44,6 +44,11 @@ services:
     networks:
       - nosql_network
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     command: redis-server --appendonly yes
 
   # Optional: Redis Commander for GUI (ARM64 compatible)
@@ -63,7 +68,7 @@ services:
 
   # PostgreSQL for Trino federated queries
   postgresql:
-    image: postgres:15
+    image: postgres:15-alpine
     container_name: nosql_postgresql
     environment:
       POSTGRES_DB: ecommerce_db
@@ -74,6 +79,11 @@ services:
     volumes:
       - postgresql_data:/var/lib/postgresql/data
       - ./data/postgresql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - nosql_network
     restart: unless-stopped

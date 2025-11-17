@@ -89,7 +89,7 @@ services:
 
   # Kafka Broker with KRaft mode (no Zookeeper needed)
   kafka:
-    image: confluentinc/cp-kafka:7.4.0
+    image: confluentinc/cp-kafka:7.5.0
     container_name: spark-kafka
     hostname: kafka
     ports:
@@ -123,7 +123,7 @@ services:
 
   # Schema Registry for Avro schemas
   schema-registry:
-    image: confluentinc/cp-schema-registry:7.4.0
+    image: confluentinc/cp-schema-registry:7.5.0
     container_name: spark-schema-registry
     depends_on:
       kafka:
@@ -140,7 +140,7 @@ services:
 
   # Redis (for caching and real-time data)
   redis:
-    image: redis:7-alpine
+    image: redis:7.2-alpine
     container_name: spark-redis
     hostname: redis
     ports:
