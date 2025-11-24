@@ -75,24 +75,27 @@ docker-compose ps
 **File**: `notebooks/02_spark_streaming.ipynb`
 
 **Topics Covered**:
-- Structured Streaming basics
-- Kafka integration with Spark
-- Real-time aggregations
-- Window functions and watermarking
-- Stream-to-stream joins
-- Performance monitoring
+- Event-time vs Processing-time
+- Tumbling windows (fixed, non-overlapping)
+- Sliding windows (overlapping windows)
+- Watermarking for late data handling
+- Advanced window operations
+- Output modes (Append, Update, Complete)
+- Real-world streaming pipelines
 
 **Sample Datasets**:
-- High-frequency stock data streams
-- Real-time analytics and alerts
+- Event streams with timestamps
+- Late-arriving data scenarios
+- User activity events
 
 **Exercises**:
-1. Basic Stream Processing
-2. Real-time Aggregations
-3. Window Functions and Watermarking
-4. Real-time Alerts and Monitoring
-5. Stream to Stream Joins
-6. Performance Monitoring and Optimization
+1. Event-Time vs Processing-Time
+2. Tumbling Windows (Fixed Windows)
+3. Sliding Windows (Overlapping Windows) ⭐
+4. Watermarking for Late Data
+5. Advanced Window Operations
+6. Output Modes with Windows
+7. Real-World Streaming Pipeline
 
 ### Lab 3: Spark MLlib ✅
 **File**: `notebooks/03_spark_ml.ipynb`
@@ -115,6 +118,89 @@ docker-compose ps
 3. Customer Clustering (K-means)
 4. Model Evaluation and Tuning
 5. Feature Engineering Pipeline
+
+### Lab 4: Spark SQL ✅
+**File**: `notebooks/04_spark_sql.ipynb`
+
+**Topics Covered**:
+- Spark SQL basics (spark.sql())
+- Register DataFrames as temporary views
+- JOIN operations with SQL syntax
+- Window functions with SQL
+- CREATE VIEW and CREATE TABLE
+- User Defined Functions (UDFs)
+- Catalog management
+
+**Sample Datasets**:
+- Sales transactions (1000 records)
+- Customer demographics (8 customers)
+
+**Exercises**:
+1. Basic Spark SQL Queries
+2. JOIN Operations with SQL
+3. Window Functions with SQL
+4. CREATE VIEW
+5. CREATE TABLE (Managed and External)
+6. User Defined Functions (UDF)
+7. Catalog Management
+
+### Lab 5: Spark + Iceberg Integration ✅
+**File**: `notebooks/05_spark_iceberg_integration.ipynb`
+
+**Topics Covered**:
+- Spark session configuration with Iceberg extensions
+- Read and write Iceberg tables from Spark
+- Schema evolution with Spark
+- Time travel queries
+- Partitioning strategies
+- Integration best practices
+
+**Sample Datasets**:
+- Sales transactions with timestamps (1000 records)
+
+**Exercises**:
+1. Create Sample Data and Setup
+2. Write to Iceberg Table
+3. Read from Iceberg Table
+4. Schema Evolution
+5. Time Travel Queries
+6. Partitioning Strategies
+7. Integration Best Practices
+
+**Note**: Full Iceberg functionality requires Iceberg Spark runtime JAR. The notebook includes examples and patterns that work when the JAR is available.
+
+### Lab 6: Spark + Kafka Integration ✅
+**File**: `notebooks/06_spark_kafka_integration.ipynb`
+
+**Topics Covered**:
+- Kafka topic setup and configuration
+- Kafka producer (Python) to send events
+- Spark reading from Kafka topics
+- Schema parsing (JSON messages)
+- Windowed aggregations với real Kafka streams
+- Sliding windows với Kafka data
+- Writing results back to Kafka
+- Kafka consumer to verify results
+- Continuous producer for testing
+
+**Sample Datasets**:
+- Real-time events sent to Kafka topics
+- User activity events (clicks, views, purchases)
+
+**Exercises**:
+1. Setup Kafka Topics
+2. Create Kafka Producer
+3. Read from Kafka với Spark
+4. Windowed Aggregations với Kafka Stream
+5. Sliding Windows với Kafka
+6. Write Results to Kafka
+7. Consume Results from Kafka
+8. Continuous Producer (Background Thread)
+
+**Prerequisites**:
+- Kafka running (via docker-compose.yml)
+- Kafka topics created
+- Kafka Python library installed
 
 ## 🔧 Configuration
 
@@ -253,6 +339,9 @@ After completing this lab, you will be able to:
 - Process large datasets with Spark DataFrames
 - Implement real-time data processing with Structured Streaming
 - Build machine learning pipelines with Spark MLlib
+- Use Spark SQL for querying data with SQL syntax
+- Integrate Spark with Apache Iceberg for data lakehouse storage
+- Create and manage tables, views, and UDFs
 - Optimize Spark applications for performance
 - Integrate Spark with various data sources
 - Monitor and debug Spark applications
